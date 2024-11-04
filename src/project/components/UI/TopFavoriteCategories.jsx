@@ -1,6 +1,6 @@
-const Categories = () => {
+const TopFavoriteCategories = () => {
   return (
-    <div className="flex justify-center gap-4 p-8 bg-gradient-to-b from-red-200 to-white">
+    <div className="flex justify-center gap-4 p-8">
       {/* Gaming Accessories */}
       <div className="bg-white p-4 rounded-lg shadow-md w-64">
         <h2 className="text-xl font-semibold mb-4">Gaming accessories</h2>
@@ -100,4 +100,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default TopFavoriteCategories;
