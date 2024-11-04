@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-link-style li{
+    border: 1px solid transparent;
+}
+.nav-link-style li:hover{
+    border: 1px solid white;
+}
+
+.search-field:hover {
+    border: 1px solid transparent;
+}

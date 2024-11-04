@@ -1,92 +1,104 @@
 import { useState } from "react";
 
 // react icons
-import { FaTasks } from "react-icons/fa";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { TbLogout2, TbUsersGroup } from "react-icons/tb";
+import { IoIosArrowDown, IoMdArrowDropdown } from "react-icons/io";
 import { CiMenuFries } from "react-icons/ci";
-import { MdLaptopMac, MdOutlineArrowRightAlt, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { BsBuildings, BsCalendar2Date } from "react-icons/bs";
-import { AiOutlineFire } from "react-icons/ai";
-import { BiSupport } from "react-icons/bi";
-import { FiUser } from "react-icons/fi";
-import { IoSettingsOutline } from "react-icons/io5";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { BiCart } from "react-icons/bi";
 import SearchField from "../../UI/SearchField";
 import { Link } from "react-router-dom";
+import { SlLocationPin } from "react-icons/sl";
+import { FiMenu } from "react-icons/fi";
 
 const Header = () => {
-    const [accountMenuOpen, setAccountMenuOpen] = useState(false)
     const [isProductHover, setIsProductHover] = useState(false)
     const [isLanguageHover, setIsLanguageHover] = useState(false)
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
     const [productMobileMegaMenu, setProductMobileMegaMenu] = useState(false)
-    const [megaMenuSubItem, setMegaMenuSubItem] = useState("")
+    const [megaMenuSubItem, setMegaMenuSubItem] = useState("");
+
 
     return (
         <header>
-            <nav
-                className="flex items-center justify-between w-full bg-gradient-to-r from-[#003e33] to-[#04724b]">
-                <img src="https://i.ibb.co/0BZfPq6/darklogo.png" alt="logo" className="w-[55px] " />
-
-                <div>
-                    <SearchField />
-                </div>
-
-                <ul className="items-center gap-[20px] text-[1rem] text-[#fff] lg:flex h-full hidden relative">
-                    <li className={`${isLanguageHover ? "text-[#3B9DF8]" : "text-white"} flex items-center gap-[5px] cursor-pointer py-3 border border-red-500`}
-                        onMouseEnter={() => setIsLanguageHover(true)}
-                        onMouseLeave={() => setIsLanguageHover(false)}>
-                        <MdLaptopMac className="text-[1.1rem]" />
-                        Products
-                        <IoIosArrowUp
-                            className={`${isLanguageHover ? "rotate-0" : "rotate-[-180deg]"} transition-all duration-300`} />
-
-                        {/* mega menu */}
-                        <div
-                            className={`${isLanguageHover ? "block" : "hidden"} bg-white rounded-md absolute top-12 left-0 p-4 w-[420px] border transition-all duration-300 boxShadow flex flex-wrap gap-3 text-sm`}>
-
-                            <div className="space-y-2 text-black mx-auto">
-                                <button className="py-1 px-12 bg-[#fed813] rounded-lg shadow-sm">Sign in</button>
-                                <p className="text-xs">New Customer? <Link to={'#'} className="text-blue-600">Start here</Link></p>
-                            </div>
-
-                            <div className="text-black w-full flex justify-between border-t pt-3">
-                                <div className="px-3">
-                                    <h4 className="text-base font-semibold">Your List</h4>
-                                    <ul>
-                                        <li>Create a list</li>
-                                        <li>Find a list or Registry</li>
-                                    </ul>
-                                </div>
-
-                                <div className="border-l px-3">
-                                    <h4 className="text-base font-semibold">Your Account</h4>
-                                    <ul>
-                                        <li>Account</li>
-                                        <li>Orders</li>
-                                        <li>Recommendations</li>
-                                        <li>Browsing History</li>
-                                        <li>Watchlist</li>
-                                        <li>Video purchases and rentals</li>
-                                        <li>Kindle Unlimited</li>
-                                        <li>Content & Devices</li>
-                                        <li>Subscribe & Save Items</li>
-                                        <li>Memberships & Subscriptions</li>
-                                        <li>Music Library</li>
-                                        <li>Orders</li>
-                                    </ul>
-                                </div>
+            <nav className="w-full px-6 bg-gradient-to-r from-[#003e33] to-[#04724b]">
+                <ul className="items-center gap-[20px] text-[1rem] text-[#fff] lg:flex lg:justify-between h-full w-full hidden relative nav-link-style">
+                    <li>
+                        <h2 className="text-2xl font-bold">Amazon Pro</h2>
+                    </li>
+                    <li>
+                        <div className="flex items-center gap-[5px] cursor-pointer h-14 text-sm text-white">
+                            <SlLocationPin className="text-[1.1rem]" />
+                            <div>
+                                <span className="text-xs font-medium text-gray-300">Deliver to</span> <br />
+                                <span className="font-bold">Bangladesh</span>
                             </div>
                         </div>
                     </li>
 
-                    <li className={`${isProductHover ? "text-[#3B9DF8]" : "text-white"} flex items-center gap-[5px] cursor-pointer py-3 border border-red-500`}
+                    <li className="search-field">
+                        <SearchField />
+                    </li>
+
+                    <li className={`flex items-center gap-1 cursor-pointer h-14`}
+                        onMouseEnter={() => setIsLanguageHover(true)}
+                        onMouseLeave={() => setIsLanguageHover(false)}>
+                        <div className="flex items-center mt-4 gap-1">
+                            <img width="626" height="417" alt="a flag with stars and stripes is shown in a photo" className="_9zid0k5 _1286nb1h _1286nb1k _1286nb19c _1286nb13ec _1286nb13ki _1286nb16 _1286nb1ac w-5" fetchPriority="high" src="https://img.freepik.com/premium-photo/flag-with-stars-stripes-is-shown-photo_908344-21223.jpg" srcSet="https://img.freepik.com/premium-photo/flag-with-stars-stripes-is-shown-photo_908344-21223.jpg" />
+                            <span className="flex items-end">
+                                <span className="font-bold ]">EN</span>
+                                <IoMdArrowDropdown />
+                            </span>
+
+                            {/* mega menu */}
+                            <div
+                                className={`${isLanguageHover ? "block" : "hidden"} bg-white text-black rounded-md absolute top-12 left-0 p-4 w-40 border transition-all duration-300 boxShadow flex flex-col gap-3 text-sm`}>
+
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="en" defaultChecked={true} />
+                                    <span>English - EN</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="es" />
+                                    <span>español - ES</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="ar" />
+                                    <span>العربية - AR</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="de" />
+                                    <span>Deutsch - DE</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="he" />
+                                    <span>עברית - HE</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="ko" />
+                                    <span>한국어 - KO</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="pt" />
+                                    <span>português - PT</span>
+                                </label>
+                                <label name="language" id="language" className="flex items-center gap-1">
+                                    <input type="radio" name="language" value="zh" />
+                                    <span>中文 (简体) - ZH</span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className={`flex items-center gap-[5px] h-14 cursor-pointer`}
                         onMouseEnter={() => setIsProductHover(true)}
                         onMouseLeave={() => setIsProductHover(false)}>
-                        <MdLaptopMac className="text-[1.1rem]" />
-                        Products
-                        <IoIosArrowUp
-                            className={`${isProductHover ? "rotate-0" : "rotate-[-180deg]"} transition-all duration-300`} />
+                        <div className="flex items-end">
+                            <div className="text-sm">
+                                <span className="text-xs font-medium">Hello, sign in</span> <br />
+                                <span className="font-bold">Account & Lists</span>
+                            </div>
+                            <IoMdArrowDropdown />
+                        </div>
 
                         {/* mega menu */}
                         <div
@@ -127,63 +139,24 @@ const Header = () => {
                         </div>
                     </li>
 
-                    <li className="flex items-center gap-[5px] cursor-pointer py-3">
-                        <AiOutlineFire className="text-[1.1rem] text-gray-600" />
-                        Features
+                    <li className="cursor-pointer h-14 flex items-center text-sm">
+                        <div>
+                            <span className="text-xs">Returns</span> <br />
+                            <span className="font-bold">& Orders</span>
+                        </div>
                     </li>
-                    <li className="flex items-center gap-[5px] cursor-pointer py-3">
-                        <BiSupport className="text-[1.1rem] text-gray-600" />
-                        Support
+                    <li className="flex items-center gap-0 cursor-pointer h-14">
+                        <div className="flex items-end">
+                            <BiCart className="w-10 h-auto" />
+                            <span className="text-sm font-bold mb-1">Cart</span>
+                        </div>
                     </li>
 
                 </ul>
 
-                <div className="flex items-center gap-[15px]">
-                    <div className="flex items-center gap-[10px] cursor-pointer relative"
-                        onClick={() => setAccountMenuOpen(!accountMenuOpen)}>
-                        <div className="relative">
-                            <img
-                                src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?t=st=1724605498~exp=1724609098~hmac=7f6fc106bae2c17b0c93af1b2e5483d9d8368f3e51284aaec7c7d50590d2bae5&w=740"
-                                alt="avatar" className="w-[35px] h-[35px] rounded-full object-cover" />
-                            <div
-                                className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
-                        </div>
 
-                        <h1 className="text-[1rem] font-[400] text-gray-600 sm:block hidden">Dhon
-                            Deo</h1>
-
-                        <div
-                            className={`${accountMenuOpen ? "translate-y-0 opacity-100 z-[1]" : "translate-y-[10px] opacity-0 z-[-1]"} bg-white w-max rounded-md boxShadow absolute top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}>
-                            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
-                                <FiUser />
-                                View Profile
-                            </p>
-                            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
-                                <IoSettingsOutline />
-                                Settings
-                            </p>
-                            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
-                                <FiUser />
-                                View Profile
-                            </p>
-
-                            <div className="mt-3 border-t border-gray-200 pt-[5px]">
-                                <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-red-500 hover:bg-red-50">
-                                    <TbLogout2 />
-                                    Logout
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <IoIosArrowUp
-                            className={`${accountMenuOpen ? "rotate-0" : "rotate-[180deg]"} transition-all duration-300 text-gray-600 sm:block hidden`} />
-
-                    </div>
-
-                    <CiMenuFries onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-                        className="text-[1.8rem] text-[#424242]c cursor-pointer lg:hidden flex" />
-                </div>
+                <CiMenuFries onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+                    className="text-[1.8rem] text-[#424242]c cursor-pointer lg:hidden flex" />
 
                 <aside
                     className={` ${mobileSidebarOpen ? "translate-x-0 opacity-100 z-20" : "translate-x-[200px] opacity-0 z-[-1]"} lg:hidden bg-white boxShadow p-4 text-center absolute top-[55px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300`}>
@@ -236,6 +209,20 @@ const Header = () => {
                         <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer capitalize">Support</li>
                     </ul>
                 </aside>
+            </nav>
+
+            <nav className="w-full px-6 bg-[#095749] text-white">
+                <ul className="text-sm font-semibold flex gap-5 nav-link-style">
+                    <li className="flex gap-1 items-center py-2">
+                        <FiMenu className="text-xl" />
+                        <span> All</span>
+                    </li>
+                    <li className="py-2">{"Today's"} Deals</li>
+                    <li className="py-2">Customer Service</li>
+                    <li className="py-2">Registry</li>
+                    <li className="py-2">Gift Cards</li>
+                    <li className="py-2">Sell</li>
+                </ul>
             </nav>
         </header>
     );
