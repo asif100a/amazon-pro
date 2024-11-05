@@ -1,6 +1,6 @@
 const TopCategories = () => {
     return (
-        <div className="flex justify-center gap-4 p-8 bg-gray-100">
+        <div className="flex justify-center gap-4 p-8">
             {/* Kitchen Appliances */}
             <div className="bg-white p-4 rounded-lg shadow-md w-64">
                 <h2 className="text-lg font-semibold mb-4">Top categories in Kitchen appliances</h2>
